@@ -67,3 +67,59 @@ elif qtd_agua > 200:
 
 resultado = f"Consumo de água: {sustentabilidade} Sustentabilidade"
 print(resultado)
+
+while True:
+    try:
+        qtd_energia = float(input("Quantos kWh de energia elétrica você consumiu hoje?: "))
+
+        if qtd_agua < 0:
+            print("Erro: valor inválido. Por favor, insira um valor positivo.")
+        else:
+            break
+
+    except ValueError:
+        print("Erro: entrada inválida. Por favor, insira um valor númerico.")
+
+if qtd_energia < 5:
+    sustentabilidade = "Alta"
+elif 5 <= qtd_energia <= 10:
+    sustentabilidade = "Moderada"
+elif qtd_energia > 10:
+    sustentabilidade = "Baixa"
+
+resultado = f"Consumo de energia: {sustentabilidade} Sustentabilidade"
+print(resultado)
+
+while True:
+    try:
+        qtd_residuos = float(input("Quantos kg de resíduos não recicláveis você gerou hoje?: "))
+
+        if qtd_residuos < 0:
+            print("Erro: valor inválido. Por favor, insira um valor positivo.")
+        else:
+            break
+
+    except ValueError:
+        print("Erro: entrada inválida. Por favor, insira um valor númerico.")
+
+while True:
+    try:
+        qtd_residuos_reciclaveis = float(input("Qual a porcentagem de resíduos reciclados no total (em %)?: "))
+
+        if qtd_residuos_reciclaveis < 0:
+            print("Erro: valor inválido. Por favor, insira um valor positivo.")
+        else:
+            break
+
+    except ValueError:
+        print("Erro: entrada inválida. Por favor, insira um valor númerico.")
+
+if qtd_residuos_reciclaveis > 50:
+    sustentabilidade = "Alta"
+elif 20 <= qtd_residuos_reciclaveis <= 50:
+    sustentabilidade = "Moderada"
+elif qtd_residuos < 20:
+    sustentabilidade = "Baixa"
+
+resultado = f"Geração de Resíduos Não Recicláveis: {sustentabilidade} Sustentabilidade"
+print(resultado)
