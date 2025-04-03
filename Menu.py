@@ -123,3 +123,69 @@ elif qtd_residuos < 20:
 
 resultado = f"Geração de Resíduos Não Recicláveis: {sustentabilidade} Sustentabilidade"
 print(resultado)
+
+print('Qual o meio de transporte você usou hoje?')        
+
+# Validações de entrada
+while True:
+    transporte_publico = input('Transporte público (ônibus, metrô, trem) (s/n): ').lower()
+    if transporte_publico in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+while True:
+    bicicleta = input('Bicicleta (s/n): ').lower()
+    if bicicleta in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+while True:
+    caminhada = input('Caminhada (s/n): ').lower()
+    if caminhada in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+while True:
+    carro = input('Carro (combustível fósseis): ').lower()
+    if carro in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+while True:
+    eletrico = input('Carro elétrico: ').lower()
+    if eletrico in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+while True:
+    carona = input('Carona compartilhada (Fósseis): ').lower()
+    if carona in ['s', 'n']:
+        break
+    else:
+        print('Entrada inválida, responda com "s" ou "n"')
+
+grupo1 = 0
+grupo2 = 0
+
+# Verifica se algum transporte do grupo 1 foi escolhido (transporte público, bicicleta, caminhada ou carro elétrico)
+if 's' in [transporte_publico, bicicleta, caminhada, eletrico]:
+    grupo1 = 1
+
+# Verifica se algum transporte do grupo 2 foi escolhido (carro ou carona compartilhada).
+if 's' in [carro, carona]:
+    grupo2 = 1
+
+# Dependendo da combinação de escolhas, atribui a sustentabilidade como 'Alta', 'Baixa' ou 'Moderada'
+if grupo1 == 1 and grupo2 == 1:
+    saida = 'Moderada'
+elif grupo1 == 1:
+    saida = 'Alta'
+elif grupo2 == 1:
+    saida = 'Baixa'
+
+print(saida, 'sustentabilidade')
